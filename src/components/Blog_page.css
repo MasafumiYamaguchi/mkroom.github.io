@@ -1,0 +1,174 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.body-container {
+  min-height: 100vh; /* ビューポート全体の高さにする */
+  background-color: #111111;
+  color: white;
+}
+
+#background {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none; /* クリックイベントを無効にする */
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* 既存のスタイル */
+
+/* ブログ記事のスタイリング */
+.blog-body-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: white;
+  text-align: left;
+}
+
+.blog-body-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.blog-body-content h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.blog-body-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.blog-body-content p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.blog-body-content ul,
+.blog-body-content ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.blog-body-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-body-content a {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+.blog-body-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
+
+.blog-body-content blockquote {
+  border-left: 4px solid #3498db;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  color: #cccccc;
+}
+
+.blog-body-content code {
+  background-color: #2c2c2c;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.blog-body-content pre {
+  background-color: #2c2c2c;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* コンテンツ内の画像のスタイリング */
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* リッチテキストの一般的なスタイリング */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  color: white;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content h1 {
+  font-size: 2.25rem;
+}
+.content h2 {
+  font-size: 1.875rem;
+}
+.content h3 {
+  font-size: 1.5rem;
+}
+
+.content p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  color: #f0f0f0;
+}
+
+.content ul,
+.content ol {
+  padding-left: 2rem;
+  margin: 1.25rem 0;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+.content a {
+  color: #38bdf8;
+  text-decoration: underline;
+}

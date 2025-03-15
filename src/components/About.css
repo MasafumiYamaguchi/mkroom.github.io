@@ -1,0 +1,51 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.body-container {
+  min-height: 100vh; /* ビューポート全体の高さにする */
+  background-color: #111111;
+  color: white;
+}
+
+#background {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none; /* クリックイベントを無効にする */
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.body-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh; /* 必要に応じて追加 */
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.SNSlink img {
+  width: 3rem;
+  height: 3rem;
+}

@@ -1,0 +1,25 @@
+.footer-content {
+  background-color: #111111;
+  font-size: 1vmin;
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  height: 3rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+hr {
+  background-color: gray;
+  height: 1px;
+  border: none;
+  width: 100%;
+  margin: 0;
+}
+
+nav ul li img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
