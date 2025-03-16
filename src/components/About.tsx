@@ -1,5 +1,10 @@
 import "./About.css";
 
+import jigazouImg from "../assets/jigazou.jpg";
+import xImg from "../assets/x.png";
+import instagramImg from "../assets/instagram.png";
+import githubImg from "../assets/github.png";
+
 const About = () => {
   return (
     <div className="body-container relative items-center justify-center min-h-screen">
@@ -14,10 +19,7 @@ const About = () => {
       <div className="grid-overlay"></div>
       <div className="body-content absolute grid grid-cols-9 grid-rows-7 gap-4 p-0">
         <div className="mypicture col-start-3 col-span-2 row-start-2 row-span-4 bg-white rounded-lg drop-shadow-lg">
-          <img
-            className="sepia-50 object-cover rounded-lg"
-            src="src\assets\jigazou.jpg"
-          />
+          <img className="sepia-50 object-cover rounded-lg" src={jigazouImg} />
         </div>
         <div className="name col-start-3 col-span-2 row-start-6 row-span-2">
           <p className="text-medium text-right text-white underline">
@@ -54,15 +56,15 @@ const About = () => {
         <div className="SNSlink col-start-6 row-start-5 flex items-end pb-2">
           <div className="text-lg text-left text-white flex gap-4">
             <a href="https://x.com/markun4649_">
-              <img className="object-cover" src="src\assets\x.png" />
+              <img className="object-cover" src={xImg} />
             </a>
             <div className="border-l border-white h-12"></div>
             <a href="https://www.instagram.com/ymgc_games">
-              <img className="object-cover" src="src\assets\instagram.png" />
+              <img className="object-cover" src={instagramImg} />
             </a>
             <div className="border-l border-white h-12"></div>
             <a href="https://github.com/MasafumiYamaguchi">
-              <img className="object-cover" src="src\assets\github.png" />
+              <img className="object-cover" src={githubImg} />
             </a>
           </div>
         </div>

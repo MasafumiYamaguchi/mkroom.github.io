@@ -1,6 +1,14 @@
 import { onMount } from "solid-js";
 import "./Body.css";
 
+import MKCodeEditorImg from "../assets/MKCodeEditor.png";
+import CoffeeImg from "../assets/coffee.jpg";
+import XImg from "../assets/x.png";
+import InstagramImg from "../assets/instagram.png";
+import SpotifyImg from "../assets/spotify.png";
+import GitHubImg from "../assets/github.png";
+import jigazouImg from "../assets/jigazou.jpg";
+
 const Body = () => {
   onMount(() => {
     const fadeinElements = document.querySelectorAll(".fadein");
@@ -28,7 +36,7 @@ const Body = () => {
             className="flex justify-center items-center w-full h-full transition-transform duration-500 hover:scale-110"
           >
             <img
-              src="src/assets/MKCodeEditor.png"
+              src={MKCodeEditorImg}
               alt="MyWork"
               className="responsive-img"
             />
@@ -42,11 +50,7 @@ const Body = () => {
             href="/Blog_list"
             className="flex justify-center items-center w-full h-full transition-transform duration-500 hover:scale-110"
           >
-            <img
-              src="src/assets/coffee.jpg"
-              alt="About"
-              className="responsive-img"
-            />
+            <img src={CoffeeImg} alt="About" className="responsive-img" />
             <h2 className="text-4xl text-center text-white absolute maincontents">
               Blog
             </h2>
@@ -59,10 +63,7 @@ const Body = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              className="object-contain w-8 h-8 mr-3"
-              src="src/assets/x.png"
-            />
+            <img className="object-contain w-8 h-8 mr-3" src={XImg} />
             <span className="text-white text-xl">X</span>
           </a>
 
@@ -72,10 +73,7 @@ const Body = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              className="object-contain w-8 h-8 mr-3"
-              src="src/assets/instagram.png"
-            />
+            <img className="object-contain w-8 h-8 mr-3" src={InstagramImg} />
             <span className="text-white text-xl">Instagram</span>
           </a>
 
@@ -85,10 +83,7 @@ const Body = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              className="object-contain w-8 h-8 mr-3"
-              src="src/assets/spotify.png"
-            />
+            <img className="object-contain w-8 h-8 mr-3" src={SpotifyImg} />
             <span className="text-black text-xl">Spotify</span>
           </a>
 
@@ -100,7 +95,7 @@ const Body = () => {
           >
             <img
               className="object-contain w-8 h-8 mr-3 invert"
-              src="src/assets/github.png"
+              src={GitHubImg}
             />
             <span className="text-black text-xl">GitHub</span>
           </a>
@@ -108,10 +103,7 @@ const Body = () => {
       </div>
       <div className="about-section grid grid-cols-10 grid-rows-7 gap-4 p-0">
         <div className="mypicture col-start-3 col-span-2 row-start-2 row-span-4 bg-white rounded-lg drop-shadow-lg">
-          <img
-            className="sepia-50 object-cover rounded-lg"
-            src="src/assets/jigazou.jpg"
-          />
+          <img className="sepia-50 object-cover rounded-lg" src={jigazouImg} />
         </div>
         <div className="name col-start-3 col-span-2 row-start-6 row-span-2">
           <p className="text-medium text-right text-white underline">
@@ -152,27 +144,21 @@ const Body = () => {
               href="https://x.com/markun4649_"
               className="p-3 block cursor-pointer hover:scale-110 transition-transform"
             >
-              <img className="object-contain w-8 h-8" src="src/assets/x.png" />
+              <img className="object-contain w-8 h-8" src={XImg} />
             </a>
             <div className="border-l border-white h-10 self-center"></div>
             <a
               href="https://www.instagram.com/ymgc_games"
               className="p-3 block cursor-pointer hover:scale-110 transition-transform"
             >
-              <img
-                className="object-contain w-8 h-8"
-                src="src/assets/instagram.png"
-              />
+              <img className="object-contain w-8 h-8" src={InstagramImg} />
             </a>
             <div className="border-l border-white h-10 self-center"></div>
             <a
               href="https://github.com/MasafumiYamaguchi"
               className="p-3 block cursor-pointer hover:scale-110 transition-transform"
             >
-              <img
-                className="object-contain w-8 h-8"
-                src="src/assets/github.png"
-              />
+              <img className="object-contain w-8 h-8" src={GitHubImg} />
             </a>
           </div>
         </div>

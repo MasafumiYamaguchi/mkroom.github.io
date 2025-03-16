@@ -1,21 +1,23 @@
 import { onMount, createSignal, createEffect } from "solid-js";
 import "./Mywork.css";
 
+import MKCodeEditorImg from "../assets/MKCodeEditor.png";
+import DotGameImg from "../assets/DotGame.gif";
+import WeatherAppImg from "../assets/WeatherApp.png";
+import Gazouhensyu1Img from "../assets/gazouhensyu1.png";
+import Gazouhensyu2Img from "../assets/gazouhensyu2.png";
+import Rensyu1Img from "../assets/rensyu1.jpg";
+import Rsh12Img from "../assets/rsh12.jpg";
+import Starrysky3Img from "../assets/starrysky3.jpg";
+import KatanaGazouImg from "../assets/katana_gazou.png";
+
 const Mywork = () => {
   const [currentgazouhensyuImageIndex, setCurrentgazouhensyuImageIndex] =
     createSignal(0);
-  const gazouhensyuimages = [
-    "src/assets/gazouhensyu1.png",
-    "src/assets/gazouhensyu2.png",
-    "src/assets/rensyu1.jpg",
-  ];
+  const gazouhensyuimages = [Gazouhensyu1Img, Gazouhensyu2Img, Rensyu1Img];
 
   const [currentcgImageIndex, setCurrentcgImageIndex] = createSignal(0);
-  const cgimages = [
-    "src/assets/rsh12.jpg",
-    "src/assets/starrysky3.jpg",
-    "src/assets/katana_gazou.png",
-  ];
+  const cgimages = [Rsh12Img, Starrysky3Img, KatanaGazouImg];
 
   const gazouhensyunextImage = () => {
     setCurrentgazouhensyuImageIndex(
@@ -51,11 +53,7 @@ const Mywork = () => {
         </div>
         {/* MKCodeEditorの場所 */}
         <div className="fadein bg-white col-start-2 col-span-2 rounded-lg drop-shadow-lg w-auto h-auto flex justify-center items-center">
-          <img
-            src="src/assets/MKCodeEditor.png"
-            alt="MyWork"
-            className="responsive-img"
-          />
+          <img src={MKCodeEditorImg} alt="MyWork" className="responsive-img" />
         </div>
         {/* MKCodeEditorの説明 */}
         <div className="fadein  col-start-5 col-span-2 rounded-lg drop-shadow-lg w-auto h-auto">
@@ -73,11 +71,7 @@ const Mywork = () => {
         </div>
         {/* DotGameの場所 */}
         <div className="fadein bg-white col-start-2 col-span-2 rounded-lg drop-shadow-lg w-auto h-auto flex justify-center items-center">
-          <img
-            src="src/assets/DotGame.gif"
-            alt="MyWork"
-            className="responsive-img"
-          />
+          <img src={DotGameImg} alt="MyWork" className="responsive-img" />
         </div>
         {/* DotGameの説明 */}
         <div className="fadein col-start-5 col-span-2 rounded-lg drop-shadow-lg w-auto h-auto">
@@ -95,11 +89,7 @@ const Mywork = () => {
         </div>
         {/* WeatherAppの場所 */}
         <div className="fadein bg-white col-start-2 col-span-2 rounded-lg drop-shadow-lg w-auto h-auto flex justify-center items-center">
-          <img
-            src="src/assets/WeatherApp.png"
-            alt="MyWork"
-            className="responsive-img"
-          />
+          <img src={WeatherAppImg} alt="MyWork" className="responsive-img" />
         </div>
         {/* WeatherAppの説明 */}
         <div className="fadein col-start-5 col-span-2 rounded-lg drop-shadow-lg w-auto h-auto">

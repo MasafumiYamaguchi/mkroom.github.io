@@ -1,4 +1,5 @@
 import "./Header.css";
+import logoImg from "../assets/NewMK_bold_transparent.png";
 
 const Header = () => {
   return (
@@ -9,11 +10,7 @@ const Header = () => {
             <h1 className="text-3xl text-white mr-2 font-bold font-sans">
               MK's room
             </h1>
-            <img
-              className="w-10 h-10"
-              src="src/assets/NewMK_bold_transparent.png"
-              alt="MK"
-            />
+            <img className="w-10 h-10" src={logoImg} alt="MK" />
           </a>
         </div>
         <nav className="flex justify-end">
