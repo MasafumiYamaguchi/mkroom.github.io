@@ -24,9 +24,9 @@ const Blog_main = () => {
   const [articles] = createResource(fetchArticles);
 
   return (
-    <div className="body-container relative items-center justify-center min-h-screen">
+    <div className="body-container relative flex flex-col items-center justify-start min-h-screen">
       <div
-        className="bg-[url(./assets/NewMK_bold_transparent.png)] bg-cover bg-center absolute w-128 h-128 opacity-30"
+        className="bg-[url(./assets/NewMK_bold_transparent.png)] bg-cover bg-center fixed w-128 h-128 opacity-30"
         id="background"
       >
         <span className="invisible">
@@ -34,15 +34,19 @@ const Blog_main = () => {
         </span>
       </div>
       <div className="grid-overlay"></div>
-      <div className="body-content absolute grid grid-cols-9 grid-rows-7 gap-4 p-0">
-        <div className=" flex justify-center items-center col-span-9 text-7xl pt-10">
-          Blog
-        </div>
-        <div className="bloglist col-start-3 col-span-5 row-start-2 row-span-6 pt-20">
+
+      {/* タイトル部分 */}
+      <div className="w-full flex justify-center items-center mt-10 mb-4">
+        <h1 className="text-7xl md:text-7xl sm:text-5xl text-white">Blog</h1>
+      </div>
+
+      {/* コンテンツ部分 - absoluteを削除し、フレックスボックスに変更 */}
+      <div className="body-content w-full md:w-4/5 lg:w-3/5 px-4 sm:px-6 mt-2 md:mt-10">
+        <div className="bloglist w-full">
           <hr />
           <ul>
             {articles()?.map((article) => (
-              <li key={article.id}>
+              <li key={article.id} className="my-4">
                 <a href={`/blog_list/${article.id}`}>
                   <h2 className="text-4xl text-left text-white">
                     {article.title}
@@ -51,9 +55,9 @@ const Blog_main = () => {
                 <p className="text-lg text-left text-white">
                   {article.publishedAt}
                 </p>
-                <hr />
+                <hr className="mt-4" />
               </li>
-            )) || <p>Loading...</p>}
+            )) || <p className="text-white text-center py-4">Loading...</p>}
           </ul>
         </div>
       </div>

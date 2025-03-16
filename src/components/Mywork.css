@@ -68,3 +68,28 @@
 .animate-slide {
   animation: slide 1s infinite linear;
 }
+
+@media (max-width: 768px) {
+  .body-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 2rem;
+  }
+
+  .body-content > div {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 0;
+  }
+
+  .fadein {
+    opacity: 1;
+  }
+
+  .mywork {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}

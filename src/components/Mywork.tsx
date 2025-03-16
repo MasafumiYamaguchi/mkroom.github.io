@@ -47,8 +47,8 @@ const Mywork = () => {
         </span>
       </div>
       <div className="grid-overlay"></div>
-      <div className="body-content grid grid-cols-7 grid-rows-5 justify-center pt-30 gap-30">
-        <div className=" flex justify-center items-center col-span-7 text-7xl">
+      <div className="body-content md:grid grid-cols-7 grid-rows-5 justify-center md:pt-30 md:gap-30">
+        <div className=" flex justify-center items-center col-span-7 text-7xl mywork">
           My Work
         </div>
         {/* MKCodeEditorの場所 */}

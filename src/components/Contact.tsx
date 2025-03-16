@@ -54,7 +54,7 @@ const Contact = () => {
       </div>
       <div className="grid-overlay"></div>
       <div className="content-body-content justify-center">
-        <h1 className="text-4xl text-center text-white pt-10">Contact</h1>
+        <h1 className="text-4xl text-center text-white md:pt-10">Contact</h1>
         <br />
         <form onSubmit={handleSubmit}>
           <div class="mb-6">

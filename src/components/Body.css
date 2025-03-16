@@ -1,9 +1,21 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .body-container {
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: column; /* 縦に並べる */
   min-height: 100vh; /* 最低でも画面の高さを確保 */
+  height: auto;
+  touch-action: pan-y;
 }
 
 #background {
@@ -72,6 +84,7 @@
   padding: 20px;
   border-radius: 10px; /* 角を丸くする */
   margin: 10px; /* マージンを追加 */
+  overflow-wrap: break-word; /* 英単語の途中で改行する */
 }
 
 .home-body-content .card {
@@ -93,6 +106,9 @@
   margin-top: 0;
   margin-bottom: 6rem;
   grid-template-rows: repeat(7, minmax(auto, max-content));
+  position: relative;
+  touch-action: auto;
+  pointer-events: auto;
 }
 
 .SNSlink {
@@ -135,4 +151,83 @@
 
 .card:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    touch-action: auto;
+    pointer-events: auto;
+  }
+
+  /* 空の領域をカバーするための透明なオーバーレイ */
+  .about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: auto;
+  }
+
+  .aboutme,
+  .mypicture,
+  .name,
+  .SNSlink {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+  }
+
+  /* SNSlink をモバイル表示で中央寄せ */
+  .SNSlink {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  /* SNSlink 内のコンテンツも中央寄せ */
+  .SNSlink > div {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .snsbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1rem auto;
+    padding-inline: 1rem;
+    margin-bottom: 0;
+    gap: 1rem;
+  }
+
+  .home-body-content {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 3rem;
+    padding-inline: 1rem;
+  }
+
+  .snsbar {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem; /* 要素間の間隔を追加 */
+  }
+
+  /* snsbar内のリンク要素にも余白を追加 */
+  .snsbar a {
+    gap: 1rem;
+    width: 100%; /* 幅を調整してモバイル表示で見やすく */
+  }
 }

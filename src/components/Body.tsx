@@ -29,7 +29,7 @@ const Body = () => {
       </div>
       <div className="grid-overlay"></div>
 
-      <div className="home-body-content grid grid-cols-20 grid-rows-3 justify-center mt-30 pb-22 z-10">
+      <div className="home-body-content md:grid grid-cols-20 grid-rows-3 justify-center mt-30 pb-22 z-10">
         <div className="fadein card transition-transform duration-500 hover:scale-105 bg-black row-span-3 col-start-4 col-span-4 rounded-lg drop-shadow-lg flex justify-center items-center">
           <a
             href="/mywork"
@@ -101,7 +101,7 @@ const Body = () => {
           </a>
         </div>
       </div>
-      <div className="about-section grid grid-cols-10 grid-rows-7 gap-4 p-0">
+      <div className="about-section md:grid grid-cols-10 grid-rows-7 gap-4 p-0 flex flex-col px-4 sm:px-6">
         <div className="mypicture col-start-3 col-span-2 row-start-2 row-span-4 bg-white rounded-lg drop-shadow-lg">
           <img className="sepia-50 object-cover rounded-lg" src={jigazouImg} />
         </div>

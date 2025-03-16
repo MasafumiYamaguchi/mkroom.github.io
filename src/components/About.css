@@ -49,3 +49,9 @@ body {
   width: 3rem;
   height: 3rem;
 }
+
+@media screen and (max-width: 768px) {
+  .mypicture {
+    margin-top: 2rem;
+  }
+}

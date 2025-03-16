@@ -23,3 +23,9 @@ nav ul li img {
   width: 1.5rem;
   height: 1.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .copyright {
+    font-size: 0.6rem;
+  }
+}

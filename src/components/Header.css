@@ -20,3 +20,24 @@ hr {
   height: 1px;
   border: none;
 }
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .titlelogo {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0rem;
+  }
+}

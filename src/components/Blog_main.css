@@ -34,3 +34,27 @@ body {
   z-index: 1;
   opacity: 0.3;
 }
+
+@media (max-width: 768px) {
+  .body-container {
+    padding-top: 1rem;
+  }
+
+  .body-content {
+    margin-top: 0;
+  }
+
+  /* ブログタイトルとリストの間隔を調整 */
+  h1 + .body-content {
+    margin-top: 0.5rem !important;
+  }
+
+  /* モバイルでの記事リストのスタイル */
+  .bloglist li {
+    margin-bottom: 1rem;
+  }
+
+  .bloglist h2 {
+    font-size: 1.75rem;
+  }
+}

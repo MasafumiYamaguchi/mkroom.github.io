@@ -7,10 +7,10 @@ const Header = () => {
       <div className="header-container flex justify-between items-center">
         <div className="flex items-center">
           <a href="/home" className="flex items-center">
-            <h1 className="text-3xl text-white mr-2 font-bold font-sans">
+            <h1 className="md:text-3xl text-white mr-2 font-bold font-sans title">
               MK's room
             </h1>
-            <img className="w-10 h-10" src={logoImg} alt="MK" />
+            <img className="titlelogo w-10 h-10" src={logoImg} alt="MK" />
           </a>
         </div>
         <nav className="flex justify-end">
