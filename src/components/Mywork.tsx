@@ -52,7 +52,7 @@ const Mywork = () => {
         {/* MKCodeEditorの場所 */}
         <div className="fadein bg-white col-start-2 col-span-2 rounded-lg drop-shadow-lg w-auto h-auto flex justify-center items-center">
           <img
-            src="src\assets\MKCodeEditor.png"
+            src="src/assets/MKCodeEditor.png"
             alt="MyWork"
             className="responsive-img"
           />

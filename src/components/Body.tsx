@@ -28,7 +28,7 @@ const Body = () => {
             className="flex justify-center items-center w-full h-full transition-transform duration-500 hover:scale-110"
           >
             <img
-              src="src\assets\MKCodeEditor.png"
+              src="src/assets/MKCodeEditor.png"
               alt="MyWork"
               className="responsive-img"
             />
@@ -43,7 +43,7 @@ const Body = () => {
             className="flex justify-center items-center w-full h-full transition-transform duration-500 hover:scale-110"
           >
             <img
-              src="src\assets\coffee.jpg"
+              src="src/assets/coffee.jpg"
               alt="About"
               className="responsive-img"
             />
@@ -61,7 +61,7 @@ const Body = () => {
           >
             <img
               className="object-contain w-8 h-8 mr-3"
-              src="src\assets\x.png"
+              src="src/assets/x.png"
             />
             <span className="text-white text-xl">X</span>
           </a>
@@ -74,7 +74,7 @@ const Body = () => {
           >
             <img
               className="object-contain w-8 h-8 mr-3"
-              src="src\assets\instagram.png"
+              src="src/assets/instagram.png"
             />
             <span className="text-white text-xl">Instagram</span>
           </a>
@@ -87,7 +87,7 @@ const Body = () => {
           >
             <img
               className="object-contain w-8 h-8 mr-3"
-              src="src\assets\spotify.png"
+              src="src/assets/spotify.png"
             />
             <span className="text-black text-xl">Spotify</span>
           </a>
@@ -100,7 +100,7 @@ const Body = () => {
           >
             <img
               className="object-contain w-8 h-8 mr-3 invert"
-              src="src\assets\github.png"
+              src="src/assets/github.png"
             />
             <span className="text-black text-xl">GitHub</span>
           </a>
@@ -110,7 +110,7 @@ const Body = () => {
         <div className="mypicture col-start-3 col-span-2 row-start-2 row-span-4 bg-white rounded-lg drop-shadow-lg">
           <img
             className="sepia-50 object-cover rounded-lg"
-            src="src\assets\jigazou.jpg"
+            src="src/assets/jigazou.jpg"
           />
         </div>
         <div className="name col-start-3 col-span-2 row-start-6 row-span-2">
@@ -152,7 +152,7 @@ const Body = () => {
               href="https://x.com/markun4649_"
               className="p-3 block cursor-pointer hover:scale-110 transition-transform"
             >
-              <img className="object-contain w-8 h-8" src="src\assets\x.png" />
+              <img className="object-contain w-8 h-8" src="src/assets/x.png" />
             </a>
             <div className="border-l border-white h-10 self-center"></div>
             <a
@@ -161,7 +161,7 @@ const Body = () => {
             >
               <img
                 className="object-contain w-8 h-8"
-                src="src\assets\instagram.png"
+                src="src/assets/instagram.png"
               />
             </a>
             <div className="border-l border-white h-10 self-center"></div>
@@ -171,7 +171,7 @@ const Body = () => {
             >
               <img
                 className="object-contain w-8 h-8"
-                src="src\assets\github.png"
+                src="src/assets/github.png"
               />
             </a>
           </div>
