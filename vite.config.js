@@ -1,15 +1,20 @@
 import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
 import { resolve } from "path";
-import { copy } from "vite-plugin-copy";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
     solidPlugin(),
     tailwindcss(),
-    copy({
-      targets: [{ src: "src/assets/**/*", dest: "dist/assets" }],
+    viteStaticCopy({
+      targets: [
+        {
+          src: "src/assets",
+          dest: "assets",
+        },
+      ],
     }),
   ],
   resolve: {

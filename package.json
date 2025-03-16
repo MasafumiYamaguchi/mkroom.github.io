@@ -12,7 +12,9 @@
   "license": "MIT",
   "devDependencies": {
     "vite": "^6.0.0",
-    "vite-plugin-solid": "^2.11.6"
+    "vite-plugin-copy": "^0.1.6",
+    "vite-plugin-solid": "^2.11.6",
+    "vite-plugin-static-copy": "^2.3.0"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
