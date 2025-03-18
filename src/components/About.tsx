@@ -17,7 +17,7 @@ const About = () => {
         </span>
       </div>
       <div className="grid-overlay"></div>
-      <div className="about-section md:grid grid-cols-10 grid-rows-7 gap-4 p-0 flex flex-col px-4 sm:px-6">
+      <div className="about-section md:grid grid-cols-10 grid-rows-7 gap-4 p-0 pt-40 flex flex-col px-4 sm:px-6">
         <div className="mypicture col-start-3 col-span-2 row-start-2 row-span-4 bg-white rounded-lg drop-shadow-lg">
           <img
             className="sepia-50 object-cover rounded-lg w-full h-full"
