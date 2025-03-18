@@ -19,7 +19,10 @@ const About = () => {
       <div className="grid-overlay"></div>
       <div className="about-section md:grid grid-cols-10 grid-rows-7 gap-4 p-0 flex flex-col px-4 sm:px-6">
         <div className="mypicture col-start-3 col-span-2 row-start-2 row-span-4 bg-white rounded-lg drop-shadow-lg">
-          <img className="sepia-50 object-cover rounded-lg" src={jigazouImg} />
+          <img
+            className="sepia-50 object-cover rounded-lg w-full h-full"
+            src={jigazouImg}
+          />
         </div>
         <div className="name col-start-3 col-span-2 row-start-6 row-span-2">
           <p className="text-medium text-right text-white underline">
