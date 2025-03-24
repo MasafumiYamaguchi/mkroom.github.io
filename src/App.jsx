@@ -7,12 +7,14 @@ import Contact from "./components/Contact";
 import Mywork from "./components/Mywork";
 import Blog_main from "./components/Blog_main";
 import Blog_page from "./components/Blog_page";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const App = () => {
   return (
     <>
       <Header />
       <Router>
+        <GoogleAnalytics />
         <Route path="/" component={Body} />
         <Route path="/home" component={Body} />
         <Route path="/about" component={About} />
