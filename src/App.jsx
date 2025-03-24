@@ -14,7 +14,15 @@ const App = () => {
     <>
       <Header />
       <Router>
-        <GoogleAnalytics />
+        <Route
+          path="/"
+          component={() => (
+            <>
+              <GoogleAnalytics />
+              <Body />
+            </>
+          )}
+        />
         <Route path="/" component={Body} />
         <Route path="/home" component={Body} />
         <Route path="/about" component={About} />
