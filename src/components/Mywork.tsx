@@ -2,6 +2,7 @@ import { onMount, createSignal, createEffect } from "solid-js";
 import "./Mywork.css";
 
 import MKCodeEditorImg from "../assets/MKCodeEditor.png";
+import ResonateImg from "../assets/Resonate.png";
 import DotGameImg from "../assets/DotGame.gif";
 import WeatherAppImg from "../assets/WeatherApp.png";
 import Gazouhensyu1Img from "../assets/gazouhensyu1.png";
@@ -67,6 +68,24 @@ const Mywork = () => {
           </p>
           <p className="text-lg text-white text-justify">
             MKCodeEditorは，SSHクライアントを使用して，リモートサーバー上のファイルを編集することができます。
+          </p>
+        </div>
+        {/* Resonateの場所 */}
+        <div className="fadein bg-white col-start-2 col-span-2 rounded-lg drop-shadow-lg w-auto h-80 flex justify-center items-center">
+          <img src={ResonateImg} alt="MyWork" className="responsive-img" />
+        </div>
+        {/* Resonateの説明 */}
+        <div className="fadein col-start-5 col-span-2 rounded-lg drop-shadow-lg w-auto h-auto">
+          <p className="text-4xl text-center text-white pt-10">Resonate</p>
+          <br />
+          <p className="text-lg text-justify text-white">
+            Resonateは，Electronを使用した音楽プレイヤーです。
+          </p>
+          <p className="text-lg text-white text-justify">
+            シンプルな音楽再生プレイヤーです。イコライザーで特定の周波数を強調することができます。
+          </p>
+          <p className="text-lg text-white text-justify">
+            今後他にも便利な機能を追加していく予定です。
           </p>
         </div>
         {/* DotGameの場所 */}
