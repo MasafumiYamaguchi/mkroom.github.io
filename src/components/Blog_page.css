@@ -44,6 +44,9 @@ body {
   padding: 2rem;
   color: white;
   text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .blog-body-content h1 {
