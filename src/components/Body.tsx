@@ -38,7 +38,7 @@ const Body = () => {
             <img
               src={MKCodeEditorImg}
               alt="MyWork"
-              className="responsive-img"
+              className="object-cover w-full h-full rounded-lg"
             />
             <h2 className="text-4xl text-center text-white absolute maincontents">
               MyWork
@@ -50,7 +50,11 @@ const Body = () => {
             href="/Blog_list"
             className="flex justify-center items-center w-full h-full transition-transform duration-500 hover:scale-110"
           >
-            <img src={CoffeeImg} alt="About" className="responsive-img" />
+            <img
+              src={CoffeeImg}
+              alt="About"
+              className="object-cover w-full h-full rounded-lg"
+            />
             <h2 className="text-4xl text-center text-white absolute maincontents">
               Blog
             </h2>
@@ -103,7 +107,10 @@ const Body = () => {
       </div>
       <div className="about-section md:grid grid-cols-10 grid-rows-7 gap-4 p-0 flex flex-col px-4 sm:px-6">
         <div className="mypicture col-start-3 col-span-2 row-start-2 row-span-4 bg-white rounded-lg drop-shadow-lg">
-          <img className="sepia-50 object-cover rounded-lg" src={jigazouImg} />
+          <img
+            className="sepia-50 object-cover w-full h-full rounded-lg"
+            src={jigazouImg}
+          />
         </div>
         <div className="name col-start-3 col-span-2 row-start-6 row-span-2">
           <p className="text-medium text-right text-white underline">

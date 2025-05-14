@@ -2,6 +2,10 @@ import { createSignal } from "solid-js";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 const Contact = () => {
   const [loading, setLoading] = createSignal(false);
   const [success, setSuccess] = createSignal(false);
@@ -22,12 +26,7 @@ const Contact = () => {
     // 注意: YOUR_SERVICE_ID、YOUR_TEMPLATE_ID、YOUR_PUBLIC_KEY は
     // EmailJSのダッシュボードで取得した値に置き換えてください
     emailjs
-      .sendForm(
-        "service_ml6v4pn",
-        "template_i7r9ltt",
-        form,
-        "4ULNdVhz3dTklyFfm"
-      )
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
       .then((result) => {
         console.log("メール送信成功:", result.text);
         setSuccess(true);
