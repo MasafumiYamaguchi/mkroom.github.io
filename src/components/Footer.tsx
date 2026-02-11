@@ -10,7 +10,7 @@ const Footer = () => {
       <hr />
       <div className="footer-content ">
         <p className="footer-section">&nbsp</p>
-        <p className="footer-section copyright">© 2025 Masafumi Yamaguchi</p>
+        <p className="footer-section copyright">© 2026 Masafumi Yamaguchi</p>
         <nav className="footer-section">
           <ul className="flex space-x-4">
             <li>
