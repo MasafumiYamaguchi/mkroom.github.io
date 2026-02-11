@@ -44,13 +44,13 @@ const About = () => {
           </p>
           <br />
           <p className="text-lg text-left text-white">
-            得意分野 : フロントエンド開発,画像デザイン(提供実績有)
+            得意分野 : Web開発,アプリ開発,画像デザイン(提供実績有)
           </p>
           <p className="text-lg text-left text-white">
             学習中の言語 : JavaScript,TypeScript,HTML,CSS,C,C#,C++
           </p>
           <p className="text-lg text-left text-white">
-            フレームワーク : React,Next.js,SolidJS,Electron,.NETFramework
+            使用技術 : React,ReactNative(Expo),Next.js,SolidJS,Electron,Node.js,.NETFramework
           </p>
           <p className="text-lg text-left text-white">
             その他 : ゲーム開発,3DCG,画像編集,動画編集
