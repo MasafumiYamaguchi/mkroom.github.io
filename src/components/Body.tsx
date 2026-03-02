@@ -17,156 +17,148 @@ const Body = () => {
     });
   });
 
+  const tools = [
+    { name: "VSCode", icon: "vscode.png" },
+    { name: "GitHub", icon: GitHubImg },
+    { name: "Spotify", icon: SpotifyImg },
+    { name: "Instagram", icon: InstagramImg },
+    { name: "X (Twitter)", icon: XImg },
+    { name: "Coffee", icon: CoffeeImg },
+  ];
+
   return (
-    <div className="body-container relative">
+    <div className="body-container relative flex-col items-center justify-center">
+      {/* 背景画像とグリッドオーバーレイ */}
       <div
-        className="bg-[url(./assets/NewMK_bold_transparent.png)] bg-cover bg-center fixed w-128 h-128 opacity-30 flex justify-center items-center"
+        className="bg-[url(./assets/NewMK_bold_transparent.png)] bg-cover bg-center fixed w-128 h-128 opacity-30"
         id="background"
       >
         <span className="invisible">
           This is a div aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         </span>
       </div>
-      <div className="grid-overlay"></div>
+      <div className="grid-overlay z-0"></div>
 
-      <div className="home-body-content md:grid grid-cols-20 grid-rows-3 justify-center mt-30 pb-22 z-10">
-        <div className="fadein card transition-transform duration-500 hover:scale-105 bg-black row-span-3 col-start-4 col-span-4 rounded-lg drop-shadow-lg flex justify-center items-center">
-          <a
-            href="/mywork"
-            className="flex justify-center items-center w-full h-full transition-transform duration-500 hover:scale-110"
-          >
-            <img
-              src={MKCodeEditorImg}
-              alt="MyWork"
-              className="object-cover w-full h-full rounded-lg"
-            />
-            <h2 className="text-4xl text-center text-white absolute maincontents">
-              MyWork
-            </h2>
-          </a>
-        </div>
-        <div className="fadein card transition duration-500 hover:scale-105 bg-black row-span-3 col-start-9 col-span-4 rounded-lg drop-shadow-lg flex justify-center items-center">
-          <a
-            href="/Blog_list"
-            className="flex justify-center items-center w-full h-full transition-transform duration-500 hover:scale-110"
-          >
-            <img
-              src={CoffeeImg}
-              alt="About"
-              className="object-cover w-full h-full rounded-lg"
-            />
-            <h2 className="text-4xl text-center text-white absolute maincontents">
-              Blog
-            </h2>
-          </a>
-        </div>
-        <div className="snsbar row-span-4 col-start-14 col-span-4  flex flex-col justify-around items-center">
-          <a
-            href="https://x.com/markun4649_"
-            className="fadein transition-transform duration-500 hover:scale-105 flex justify-center items-center w-full p-3 bg-black rounded-lg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className="object-contain w-8 h-8 mr-3" src={XImg} />
-            <span className="text-white text-xl">X</span>
-          </a>
+      {/* 背景装飾テキスト */}
+      <p className="bgtext left-128 top-0">MK'S ROOM</p>
+      <p className="bgtext left-384 top-128">GO FOR BROKE</p>
+      <p className="bgtext left-160 top-256">乾坤一擲</p>
 
-          <a
-            href="https://www.instagram.com/ymgc_games"
-            className="fadein transition-transform duration-500 hover:scale-110 flex justify-center items-center w-full p-3 bg-gradient-to-bl from-blue-600 via-red-400 to-yellow-600 rounded-lg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className="object-contain w-8 h-8 mr-3" src={InstagramImg} />
-            <span className="text-white text-xl">Instagram</span>
-          </a>
+      {/*コンテンツ*/}
+      <div className="fadein z-10 pb-8 pt-12">
+        <h1 className="text-4xl font-bold mb-6">ABOUT ME</h1>
 
-          <a
-            href="https://open.spotify.com/user/32056ochmj613rzj1npdufqya?si=c77631d76fa94400"
-            className="fadein transition-transform duration-500 hover:scale-110 flex justify-center items-center w-full p-3 bg-green-500 rounded-lg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className="object-contain w-8 h-8 mr-3" src={SpotifyImg} />
-            <span className="text-black text-xl">Spotify</span>
-          </a>
+        <div className="mx-auto w-full max-w-8xl rounded-2xl border border-white/20 bg-white/10 p-8 shadow-xl backdrop-blur-sm">
+          <div className="flex flex-col md:flex-row items-center gap-24">
+            <div className="flex flex-col gap-3">
+              <img
+                src={jigazouImg}
+                alt="Profile"
+                className="w-72 h-72 md:w-96 md:h-96 rounded-xl object-cover"
+              />
+              <p className="text-md ml-6">photo by gest613</p>
+            </div>
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-4 mb-4">
+                <p className="text-lg text-white font-bold leading-8">
+                  2005年4月20日生まれ。千葉県在住。
+                  <br />
+                  芝浦工業大学工学部情報工学コース在学。
+                  <br />
+                  2024年から本格的にプログラミングを始め、Web開発を中心に勉強中。
+                  <br />
+                  <br />
+                  得意分野：Web開発、アプリ開発、3DCG
+                  <br />
+                  勉強中の技術：React・Next.js、SolidJS、ReactNative、Node.js、Electron
+                  <br />
+                  興味のある技術：CI/CD、セキュリティ、IaC、クラウドインフラ（AWS/GCP）
+                </p>
+              </div>
 
-          <a
-            href="https://github.com/MasafumiYamaguchi"
-            className="fadein transition-transform hover:scale-110 flex justify-center items-center w-full p-3 bg-white rounded-lg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="object-contain w-8 h-8 mr-3 invert"
-              src={GitHubImg}
-            />
-            <span className="text-black text-xl">GitHub</span>
-          </a>
+              <div className="mt-6 rounded-xl border border-white/20 bg-black/20 p-4">
+                <h3 className="text-xl font-bold mb-3 text-white">Skills</h3>
+                <ul className="space-y-2 text-white">
+                  <li className="flex justify-between gap-6">
+                    <span>React / Next.js</span>
+                    <span className="text-yellow-400">★★★★☆</span>
+                  </li>
+                  <li className="flex justify-between gap-6">
+                    <span>React Native</span>
+                    <span className="text-yellow-400">★★★★☆</span>
+                  </li>
+                  <li className="flex justify-between gap-6">
+                    <span>Node.js</span>
+                    <span className="text-yellow-400">★★★★☆</span>
+                  </li>
+                  <li className="flex justify-between gap-6">
+                    <span>SolidJS</span>
+                    <span className="text-yellow-400">★★★☆☆</span>
+                  </li>
+                  <li className="flex justify-between gap-6">
+                    <span>Electron</span>
+                    <span className="text-yellow-400">★★★☆☆</span>
+                  </li>
+                  <li className="flex justify-between gap-6">
+                    <span>C/C++</span>
+                    <span className="text-yellow-400">★★★☆☆</span>
+                  </li>
+                  <li className="flex justify-between gap-6">
+                    <span>Python</span>
+                    <span className="text-yellow-400">★☆☆☆☆</span>
+                  </li>
+                  <li className="flex justify-between gap-6">
+                    <span>Java</span>
+                    <span className="text-yellow-400">★☆☆☆☆</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="about-section md:grid grid-cols-10 grid-rows-7 gap-4 p-0 flex flex-col px-4 sm:px-6">
-        <div className="mypicture col-start-3 col-span-2 row-start-2 row-span-4 bg-white rounded-lg drop-shadow-lg">
-          <img
-            className="sepia-50 object-cover w-full h-full rounded-lg"
-            src={jigazouImg}
-          />
-        </div>
-        <div className="name col-start-3 col-span-2 row-start-6 row-span-2">
-          <p className="text-medium text-right text-white underline">
-            photo by 午後の紅茶
-          </p>
-        </div>
-        <div className="aboutme col-start-6 col-span-4 row-start-2 row-span-2">
-          <p className="text-4xl text-left text-white">About me</p>
-          <br />
-          <p className="text-lg text-left text-white">
-            2005年4月20日生まれ.千葉県市川市在住.
-          </p>
-          <p className="text-lg text-left text-white">
-            芝浦工業大学工学部情報工学コース在学. &nbsp;
-            2024年から本格的にプログラミングを始める.
-          </p>
-          <p className="text-lg text-left text-white">
-            Webフロントエンド(SolidJS,React)を中心に学習中.
-          </p>
-          <br />
-          <p className="text-lg text-left text-white">
-            得意分野 : Web開発,アプリ開発,画像デザイン(提供実績有)
-          </p>
-          <p className="text-lg text-left text-white">
-            学習中の言語 : JavaScript,TypeScript,HTML,CSS,C,C#,C++
-          </p>
-          <p className="text-lg text-left text-white">
-            使用技術 : React,ReactNative(Expo),Next.js,SolidJS,Electron,Node.js,.NETFramework
-          </p>
-          <p className="text-lg text-left text-white">
-            その他 : ゲーム開発,3DCG,画像編集,動画編集
-          </p>
-        </div>
-        {/* SNSリンクの行スパンを増やし、上下のpaddingを追加 */}
-        <div className="SNSlink col-start-6 col-span-4 row-start-5 row-span-2 flex items-center py-4 z-10 relative">
-          <div className="text-lg text-left text-white flex gap-4">
-            <a
-              href="https://x.com/markun4649_"
-              className="p-3 block cursor-pointer hover:scale-110 transition-transform"
-            >
-              <img className="object-contain w-8 h-8" src={XImg} />
-            </a>
-            <div className="border-l border-white h-10 self-center"></div>
-            <a
-              href="https://www.instagram.com/ymgc_games"
-              className="p-3 block cursor-pointer hover:scale-110 transition-transform"
-            >
-              <img className="object-contain w-8 h-8" src={InstagramImg} />
-            </a>
-            <div className="border-l border-white h-10 self-center"></div>
-            <a
-              href="https://github.com/MasafumiYamaguchi"
-              className="p-3 block cursor-pointer hover:scale-110 transition-transform"
-            >
-              <img className="object-contain w-8 h-8" src={GitHubImg} />
-            </a>
+
+        <h1 className="text-4xl font-bold mb-6 pt-12">MY WORK</h1>
+
+        <div className="mx-auto w-full max-w-8xl rounded-2xl border border-white/20 bg-white/10 p-8 shadow-xl backdrop-blur-sm">
+          <div className="flex flex-col md:flex-row-reverse items-center gap-16">
+            <div className="flex flex-col gap-3 w-full md:w-auto max-w-xl">
+              <img
+                src={MKCodeEditorImg}
+                alt="MK Code Editor"
+                className="w-full h-auto max-w-[24rem] md:max-w-lg rounded-xl object-contain"
+              />
+              <p className="text-md ml-6 text-end mr-3">MK Code Editor</p>
+            </div>
+            <div className="max-w-xl">
+              <div className="flex items-center gap-4 mb-4">
+                <p className="text-lg text-white font-bold leading-8">
+                  私が今までに作った作品やプロジェクトを紹介します。
+                  <br />
+                  自分が興味を持った技術やアイデアを形にすることが好きで、様々
+                  <br />
+                  なプロジェクトに取り組んできました。
+                  <br />
+                  <br />
+                  右の作品：MK Code Editor（Electron製のコードエディタ）
+                  <br />
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-4 mb-4">
+                <p className="text-2xl font-bold text-white">よく使うツール</p>
+                <div className="grid grid-cols-4 grid-rows-3 gap-4 mt-4">
+                  {tools.map((tool, index) => (
+                    <div key={index} className="flex flex-col items-center">
+                      <img
+                        src={tool.icon}
+                        alt={tool.name}
+                        className="w-12 h-12"
+                      />
+                      <span className="text-sm">{tool.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
