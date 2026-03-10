@@ -1,18 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Kosugi&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sawarabi+Gothic&display=swap");
+
+.header-root {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-background {
+  position: absolute;
+  inset: 0;
+  height: 72px;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .header-container {
-  background-color: #111111;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(17, 17, 17, 1);
+  font-size: clamp(14px, 1.6vw, 18px);
   color: white;
   padding: 1rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 nav ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  padding-right: 2rem;
+  padding-right: 0;
+  margin: 0;
 }
 
 hr {
@@ -22,22 +43,31 @@ hr {
 }
 
 @media screen and (max-width: 768px) {
+  .header-background {
+    height: 56px;
+    background-size: 28px 56px !important;
+  }
+
   .header-container {
     flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
   }
 
   nav ul {
     gap: 1rem;
+    justify-content: center;
   }
 
   .title {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    font-size: 1.35rem;
   }
 
   .titlelogo {
     width: 2rem;
     height: 2rem;
-    margin-top: 0rem;
+    margin-top: 0;
   }
 }
