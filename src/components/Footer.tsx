@@ -14,7 +14,7 @@ const Footer = () => {
             key={i}
             src={slashImg}
             alt="Slash"
-            className="h-full w-full opacity-8 object-cover"
+            className="h-full w-full opacity-8 object-cover select-none pointer-events-none animate-slash"
           />
         ))}
       </div>
@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="footer-content">
           <p className="footer-section">&nbsp;</p>
           <p className="footer-section copyright">© 2026 Masafumi Yamaguchi</p>
-          <nav className="footer-section">
+          <nav className="footer-section z-30">
             <ul className="flex space-x-4">
               <li>
                 <a href="https://x.com/markun4649_">

@@ -67,7 +67,7 @@ const Contact = () => {
               type="text"
               id="name"
               name="user_name" // EmailJSで使用する名前
-              class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5 pl-4 pr-4 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-white dark:focus:border-white"
+              class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5 pl-4 pr-4 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-white dark:focus:border-white"
               placeholder="名無しの権兵衛"
               required
             />
@@ -83,7 +83,7 @@ const Contact = () => {
               type="email"
               id="email"
               name="user_email" // EmailJSで使用する名前
-              class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 pr-4 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 pr-4 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="namelessgombeh@email.com"
               required
             />
@@ -98,7 +98,7 @@ const Contact = () => {
             <textarea
               id="message"
               name="message" // EmailJSで使用する名前
-              class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 pr-4 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 pr-4 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Message"
               required
               rows="6"
@@ -121,7 +121,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={loading()}
-              class="w-1/5 bg-gray-500 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
+              class="w-1/5 bg-white hover:bg-black hover:border hover:border-gray-300 hover:text-white text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
             >
               {loading() ? "送信中..." : "Send"}
             </button>

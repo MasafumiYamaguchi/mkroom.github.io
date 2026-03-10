@@ -1,6 +1,10 @@
 import { onMount, createResource } from "solid-js";
 import "./Body.css";
 
+import aboutme from "./About";
+import mywork from "./Mywork";
+import blog from "./Blog_main";
+
 import MKCodeEditorImg from "../assets/MKCodeEditor.png";
 import CoffeeImg from "../assets/coffee.jpg";
 import vscodeImg from "../assets/vscode.png";
@@ -75,10 +79,18 @@ const Body = () => {
       <p className="bgtext left-128 top-0">MK'S ROOM</p>
       <p className="bgtext left-384 top-128">GO FOR BROKE</p>
       <p className="bgtext left-160 top-256">乾坤一擲</p>
+      <p className="bgtext left-384 top-384">TypeScript</p>
 
       {/*コンテンツ*/}
       <div className="fadein z-10 pb-8 pt-12">
-        <h1 className="text-4xl font-bold mb-6">ABOUT ME</h1>
+        <div className="about-me border-white/20 bg-white/10 rounded-2xl font-bold text-4xl text-white w-3xs h-16 mb-6 border">
+          <a
+            href="/about"
+            className="flex items-center justify-center h-full w-full"
+          >
+            ABOUT ME
+          </a>
+        </div>
 
         <div className="mx-auto w-full max-w-8xl rounded-2xl border border-white/20 bg-white/10 p-8 shadow-xl backdrop-blur-sm">
           <div className="flex flex-col md:flex-row items-center gap-24">
@@ -136,7 +148,14 @@ const Body = () => {
           </div>
         </div>
 
-        <h1 className="text-4xl font-bold mb-6 pt-12">MY WORK</h1>
+        <div className="about-me border-white/20 bg-white/10 rounded-2xl font-bold text-4xl text-white w-md h-16 mb-6 border mt-12">
+          <a
+            href="/mywork"
+            className="flex items-center justify-center h-full w-full"
+          >
+            MY WORK
+          </a>
+        </div>
 
         <div className="mx-auto w-full max-w-8xl rounded-2xl border border-white/20 bg-white/10 p-8 shadow-xl backdrop-blur-sm">
           <div className="flex flex-col md:flex-row-reverse items-center gap-16">
@@ -182,7 +201,14 @@ const Body = () => {
         </div>
 
         <div className="fadein z-10 pb-8 pt-12">
-          <h1 className="text-4xl font-bold mb-6">BLOG</h1>
+          <div className="about-me border-white/20 bg-white/10 rounded-2xl font-bold text-4xl text-white w-3xs h-16 mb-6 border">
+            <a
+              href="/blog_list"
+              className="flex items-center justify-center h-full w-full"
+            >
+              BLOG
+            </a>
+          </div>
 
           <div className="mx-auto w-full max-w-8xl rounded-2xl border border-white/20 bg-white/10 p-8 shadow-xl backdrop-blur-sm">
             <div className="bloglist w-full">
