@@ -46,7 +46,7 @@ const Mywork = () => {
       image: IntegralAlarmImg,
       descriptions: [
         "IntegralAlarmは、Reactを使用した積分アラームアプリです。",
-        "このアプリは私が所属しているサークル「デジクリ」の2025年後期の\n「PGおもちゃ企画」にて作成したアプリです。",
+        "このアプリは私が所属しているサークル「デジクリ」の2025年前期の\n「PGおもちゃ企画」にて作成したアプリです。",
         "IntegralAlarmは，アラームを止めるために，用意された問題の中から積分の問題を解くというアプリです。",
       ],
       link: "https://integral-alarm.vercel.app/",
