@@ -33,7 +33,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/ymgc_games">
+                <a href="https://www.instagram.com/msfm_mark">
                   <img src={instagramImg} />
                 </a>
               </li>
