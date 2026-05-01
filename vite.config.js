@@ -1,12 +1,12 @@
 import { defineConfig } from "vite";
-import solidPlugin from "vite-plugin-solid";
+import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
-    solidPlugin(),
+    react(),
     tailwindcss(),
     viteStaticCopy({
       targets: [

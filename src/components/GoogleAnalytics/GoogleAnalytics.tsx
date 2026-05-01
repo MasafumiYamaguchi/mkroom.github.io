@@ -1,11 +1,11 @@
-import { onMount, createEffect } from "solid-js";
-import { useLocation } from "@solidjs/router";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const GoogleAnalytics = () => {
   const location = useLocation();
   const MEASUREMENT_ID = "G-XQGYDR8QWG";
 
-  onMount(() => {
+  useEffect(() => {
     // Google Analytics スクリプトを動的に追加
     const script1 = document.createElement("script");
     script1.async = true;
@@ -21,16 +21,16 @@ const GoogleAnalytics = () => {
       gtag('config', '${MEASUREMENT_ID}');
     `;
     document.head.appendChild(script2);
-  });
+  }, []);
 
-  createEffect(() => {
+  useEffect(() => {
     // パスが変更されたときに新しいページビューを送信
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("config", MEASUREMENT_ID, {
         page_path: location.pathname,
       });
     }
-  });
+  }, [location.pathname]);
 
   return null;
 };
