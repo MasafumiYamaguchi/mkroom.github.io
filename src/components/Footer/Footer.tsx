@@ -1,9 +1,9 @@
 import "./Footer.css";
 
-import xImg from "../assets/x.png";
-import instagramImg from "../assets/instagram.png";
-import githubImg from "../assets/github.png";
-import slashImg from "../assets/slash.png";
+import xImg from "../../assets/x.png";
+import instagramImg from "../../assets/instagram.png";
+import githubImg from "../../assets/github.png";
+import slashImg from "../../assets/slash.png";
 
 const Footer = () => {
   return (

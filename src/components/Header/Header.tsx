@@ -1,6 +1,6 @@
 import "./Header.css";
-import logoImg from "../assets/NewMK_bold_transparent.png";
-import slashImg from "../assets/slash.png";
+import logoImg from "../../assets/NewMK_bold_transparent.png";
+import slashImg from "../../assets/slash.png";
 
 const Header = () => {
   return (
