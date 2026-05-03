@@ -14,13 +14,10 @@ const Header = () => {
             <img className="titlelogo w-10 h-10" src={logoImg} alt="MK" />
           </a>
         </div>
-        <nav className="flex justify-end">
+        <nav className="flex justify-end font-bold">
           <ul className="flex space-x-4 font-sans">
             <li>
               <a href="/home">HOME</a>
-            </li>
-            <li>
-              <a href="/about">ABOUT</a>
             </li>
             <li>
               <a href="/contact">CONTACT</a>

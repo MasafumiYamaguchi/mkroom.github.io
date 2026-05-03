@@ -1,172 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&family=Kosugi&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto+Mono:ital,wght@0,700;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sawarabi+Gothic&display=swap");
+
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.body-container {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column; /* 縦に並べる */
-  min-height: 100vh; /* 最低でも画面の高さを確保 */
-  height: auto;
-  touch-action: pan-y;
+#root {
+  max-width: 100%;
+  overflow-x: clip;
 }
 
-#background {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+.body-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
 }
 
 .bgtext {
-  position: absolute; /* fixed -> absolute */
-  transform: translateX(-50%);
+  position: absolute;
   z-index: 1;
+  transform: translate(-50%, -50%);
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
-
   font-family: "Geom", sans-serif;
   font-size: clamp(5rem, 14vw, 15rem);
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.08); /* 薄く */
+  color: rgba(255, 255, 255, 0.08);
 }
 
 .grid-overlay {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
   background-size: 40px 40px;
-  pointer-events: none; /* クリックイベントを無効にする */
-  z-index: 1;
   opacity: 0.3;
-}
-
-.body-glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.home-section {
-  position: relative;
-  z-index: 10;
-  width: min(calc(100% - 4rem), 90rem);
-  margin-inline: auto;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
-}
-
-.home-section-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 16rem;
-  height: 4rem;
-  margin-bottom: 1.5rem;
-  border-radius: 1rem;
-  color: #ffffff;
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.home-section-title--wide {
-  width: 28rem;
-  max-width: calc(100vw - 2rem);
-}
-
-.home-section-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.home-section-card {
-  width: 100%;
-  padding: 2rem;
-  border-radius: 1rem;
-}
-
-.home-inner-card {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-radius: 0.75rem;
-}
-
-.home-section-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-}
-
-.home-section-content--reverse {
-  flex-direction: row-reverse;
-}
-
-.home-section-media {
-  flex: 0 0 min(40%, 32rem);
-}
-
-.home-section-copy {
-  flex: 1 1 0;
-  max-width: 44rem;
-}
-
-.home-section-image {
-  width: 100%;
-  height: auto;
-  border-radius: 0.75rem;
-  object-fit: cover;
-}
-
-.home-profile-image {
-  aspect-ratio: 1 / 1;
-}
-
-.home-section-title,
-.home-section-card,
-.home-inner-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.stack {
   pointer-events: none;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .fadein {
@@ -174,192 +59,319 @@ body {
   transition: opacity 1s ease-in-out;
 }
 
-.fadein:hover {
-  transform: scale(1.1);
-}
-
 .fadein.fade-in {
   opacity: 1;
 }
 
-.responsive-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  max-height: 100%; /* 画像の高さをカードに合わせる */
-  max-width: 100%;
-}
-
-.maincontents {
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
-}
-
 .aboutme {
   padding: 20px;
-  border-radius: 10px; /* 角を丸くする */
-  margin: 10px; /* マージンを追加 */
-  overflow-wrap: break-word; /* 英単語の途中で改行する */
+  margin: 10px;
+  border-radius: 10px;
+  overflow-wrap: break-word;
 }
 
-.home-body-content .card {
-  height: 300px; /* カードの高さを調整 */
-  display: flex;
-  justify-content: center;
+.work-preview-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
+  gap: 4rem;
+  width: min(calc(100% - 8rem), 90rem);
+  min-height: 100vh;
+  margin-inline: auto;
 }
 
-.home-body-content {
-  min-height: auto;
-  margin-top: 6rem;
-  margin-bottom: 1rem; /* about-sectionとの間隔 */
-  padding-top: 0;
-}
-
-.about-section {
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 6rem;
-  grid-template-rows: repeat(7, minmax(auto, max-content));
+.work-preview-detail {
   position: relative;
-  touch-action: auto;
-  pointer-events: auto;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
 }
 
-.SNSlink {
-  z-index: 10;
+.work-preview-image-field {
   position: relative;
-  margin-top: 1rem;
-  overflow: visible;
-}
-
-.SNSlink a {
+  isolation: isolate;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  transition: transform 0.2s;
+  min-height: 32rem;
 }
 
-.SNSlink a:hover {
-  transform: scale(1.1);
-}
-
-.SNSlink img {
+.work-preview-image-button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.work-preview-image {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 38rem);
+  max-height: 30rem;
   object-fit: contain;
+  border-radius: 0.75rem;
 }
 
-.SNSlink .border-l {
-  align-self: center;
+.work-preview-image-counter {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 2;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-size: 0.875rem;
 }
 
-.mypicture {
+.work-preview-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.work-preview-dots,
+.work-preview-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.nav-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    transform 0.2s;
+}
+
+.nav-dot:hover {
+  background: rgba(255, 255, 255, 0.65);
+  transform: scale(1.2);
+}
+
+.nav-dot-active {
+  border-color: #fff;
+  background: #fff !important;
+  transform: scale(1.3);
+}
+
+.nav-arrow {
+  padding: 0.1rem 0.65rem 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.blog-preview-section {
+  position: relative;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem;
+  overflow: hidden;
+  background: #000;
+  text-align: center;
 }
 
-.card {
-  transition: transform 0.5s ease-in-out;
+.blog-preview-section > .title {
+  position: relative;
+  z-index: 1;
 }
 
-.card:hover {
-  transform: scale(1.1);
+.blog-preview-background-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: min(42rem, 78vw);
+  height: auto;
+  opacity: 0.16;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.blog-preview-list {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 90rem);
+}
+
+.zenn-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.zenn-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-align: left;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.zenn-card:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+.zenn-card-image {
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+}
+
+.zenn-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.zenn-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.zenn-card-date {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
 }
 
 @media (max-width: 768px) {
-  .about-section {
+  .profile-section {
+    height: auto;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #000, #000 52%, transparent);
+  }
+
+  .profile-layout {
     display: flex;
     flex-direction: column;
-    position: relative;
-    width: 100%;
-    touch-action: auto;
-    pointer-events: auto;
+    min-height: 100vh;
   }
 
-  /* 空の領域をカバーするための透明なオーバーレイ */
-  .about-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    pointer-events: auto;
+  .profile-photo {
+    height: auto;
+    min-height: 44vh;
+    padding: 5rem 1rem 2rem;
   }
 
-  .aboutme,
-  .mypicture,
-  .name,
-  .SNSlink {
-    position: relative;
-    z-index: 10;
-    pointer-events: auto;
+  .profile-photo img {
+    width: min(70vw, 18rem);
   }
 
-  /* SNSlink をモバイル表示で中央寄せ */
-  .SNSlink {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 1rem auto;
+  .profile-content {
+    height: auto;
+    min-height: auto;
+    padding: 1rem 1.25rem 4rem;
+    margin: 0;
   }
 
-  /* SNSlink 内のコンテンツも中央寄せ */
-  .SNSlink > div {
-    justify-content: center;
-    width: 100%;
+  .profile-copy {
+    align-items: flex-start;
+    margin-left: 0;
   }
 
-  .snsbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 1rem auto;
-    padding-inline: 1rem;
-    margin-bottom: 0;
-    gap: 1rem;
+  .profile-copy p {
+    font-size: 1rem;
+    line-height: 1.9;
   }
 
-  .home-body-content {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 3rem;
-    padding-inline: 1rem;
-  }
-
-  .home-section {
+  .work-preview-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "description"
+      "link"
+      "controls";
+    gap: 1.5rem;
+    align-items: start;
     width: min(calc(100% - 2rem), 90rem);
+    padding-block: 3rem;
   }
 
-  .home-section-content,
-  .home-section-content--reverse {
-    flex-direction: column;
-    gap: 2rem;
+  .work-preview-detail {
+    display: contents;
   }
 
-  .home-section-media,
-  .home-section-copy {
-    width: 100%;
-    max-width: 100%;
-    flex-basis: auto;
+  .work-preview-heading {
+    display: none;
   }
 
-  .snsbar {
-    display: flex;
-    flex-direction: column; /* 縦に並べる */
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 1rem; /* 要素間の間隔を追加 */
+  .work-preview-title {
+    grid-area: title;
+    text-align: center;
   }
 
-  /* snsbar内のリンク要素にも余白を追加 */
-  .snsbar a {
-    gap: 1rem;
-    width: 100%; /* 幅を調整してモバイル表示で見やすく */
+  .work-preview-description {
+    grid-area: description;
+  }
+
+  .work-preview-link {
+    grid-area: link;
+    justify-self: center;
+  }
+
+  .work-preview-controls {
+    grid-area: controls;
+  }
+
+  .work-preview-image-field {
+    grid-area: image;
+    min-height: auto;
+  }
+
+  .work-preview-image {
+    max-height: 18rem;
+  }
+
+  .blog-preview-section {
+    padding: 3rem 1rem;
+  }
+
+  .zenn-card-grid {
+    grid-template-columns: 1fr;
   }
 }
