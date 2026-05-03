@@ -26,17 +26,13 @@ const Footer = () => {
           <p className="footer-section">&nbsp;</p>
           <p className="footer-section copyright">© 2026 Masafumi Yamaguchi</p>
           <nav className="footer-section z-30">
-            <ul className="flex space-x-4">
+            <ul className="flex">
               <li>
                 <a href="https://x.com/markun4649_">
                   <img src={xImg} />
                 </a>
               </li>
-              <li>
-                <a href="https://www.instagram.com/msfm_mark">
-                  <img src={instagramImg} />
-                </a>
-              </li>
+              <div className="border-l border-white h-5 self-center"></div>
               <li>
                 <a href="https://github.com/MasafumiYamaguchi">
                   <img src={githubImg} />

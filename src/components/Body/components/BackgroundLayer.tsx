@@ -14,10 +14,10 @@ const BackgroundLayer = () => {
       </div>
       <div className="grid-overlay"></div>
 
-      <p className="bgtext left-128 top-0">MK'S ROOM</p>
+      <p className="bgtext left-256 top-32">MK'S ROOM</p>
       <p className="bgtext left-384 top-128">GO FOR BROKE</p>
-      <p className="bgtext left-160 top-256">乾坤一擲</p>
-      <p className="bgtext left-384 top-384">TypeScript</p>
+      <p className="bgtext left-128 top-280">乾坤一擲</p>
+      <p className="bgtext left-224 top-384">TypeScript</p>
     </>
   );
 };

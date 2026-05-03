@@ -5,10 +5,15 @@ import BackgroundLayer from "./components/BackgroundLayer";
 import BlogPreview, { type Article } from "./components/BlogPreview";
 import WorkPreview from "./components/WorkPreview";
 
-import { fetchArticles } from "../function/articles";
+import {
+  fetchArticles,
+  fetchZennArticles,
+  type ZennArticle,
+} from "../function/articles";
 
 const Body = () => {
   const [articles, setArticles] = useState<Article[]>([]);
+  const [zennArticles, setZennArticles] = useState<ZennArticle[]>([]);
 
   useEffect(() => {
     const fadeinElements = document.querySelectorAll(".fadein");
@@ -19,6 +24,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchArticles().then(setArticles);
+    fetchZennArticles().then(setZennArticles);
   }, []);
 
   return (
@@ -26,7 +32,7 @@ const Body = () => {
       <BackgroundLayer />
       <Aboutme />
       <WorkPreview />
-      <BlogPreview articles={articles} />
+      <BlogPreview articles={articles} zennArticles={zennArticles} />
     </div>
   );
 };
