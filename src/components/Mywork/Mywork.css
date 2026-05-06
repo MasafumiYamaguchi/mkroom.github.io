@@ -27,21 +27,6 @@
   opacity: 0.3;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fadein {
-  animation: fadeIn 1s ease forwards;
-}
-
 /* カード */
 .work-card {
   display: flex;

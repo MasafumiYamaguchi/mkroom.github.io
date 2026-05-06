@@ -29,6 +29,25 @@ code {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
+.fadein {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.fadein.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fadein {
+    transition: none;
+  }
+}
+
 @theme {
   --color-clear: rgba(0, 0, 0, 0);
 }

@@ -16,13 +16,6 @@ const Body = () => {
   const [zennArticles, setZennArticles] = useState<ZennArticle[]>([]);
 
   useEffect(() => {
-    const fadeinElements = document.querySelectorAll(".fadein");
-    fadeinElements.forEach((element) => {
-      element.classList.add("fade-in");
-    });
-  });
-
-  useEffect(() => {
     fetchArticles().then(setArticles);
     fetchZennArticles().then(setZennArticles);
   }, []);

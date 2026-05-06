@@ -54,15 +54,6 @@ body {
   pointer-events: none;
 }
 
-.fadein {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.fadein.fade-in {
-  opacity: 1;
-}
-
 .aboutme {
   padding: 20px;
   margin: 10px;

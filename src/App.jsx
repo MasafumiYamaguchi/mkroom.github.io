@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
 import Footer from "./components/Footer/Footer";
@@ -9,10 +10,45 @@ import Blog_main from "./components/Blog_main/Blog_main";
 import Blog_page from "./components/Blog_page/Blog_page";
 import GoogleAnalytics from "./components/GoogleAnalytics/GoogleAnalytics";
 
+const FadeInObserver = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const targets = document.querySelectorAll(".fadein:not(.fade-in)");
+
+    if (!("IntersectionObserver" in window)) {
+      targets.forEach((target) => target.classList.add("fade-in"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.15,
+      },
+    );
+
+    targets.forEach((target) => observer.observe(target));
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  return null;
+};
+
 const App = () => {
   return (
     <BrowserRouter>
       <GoogleAnalytics />
+      <FadeInObserver />
       <Header />
       <Routes>
         <Route path="/" element={<Body />} />
