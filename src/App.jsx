@@ -1,67 +1,47 @@
 import { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import Header from "./components/Header/Header";
-import Body from "./components/Body/Body";
-import Footer from "./components/Footer/Footer";
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
-import Mywork from "./components/Mywork/Mywork";
-import Blog_main from "./components/Blog_main/Blog_main";
-import Blog_page from "./components/Blog_page/Blog_page";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import WorkDetail from "./pages/WorkDetail";
 import GoogleAnalytics from "./components/GoogleAnalytics/GoogleAnalytics";
 
-const FadeInObserver = () => {
-  const location = useLocation();
+const ScrollManager = () => {
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    const targets = document.querySelectorAll(".fadein:not(.fade-in)");
-
-    if (!("IntersectionObserver" in window)) {
-      targets.forEach((target) => target.classList.add("fade-in"));
-      return;
+    if (hash) {
+      // ルート切替直後は DOM が未描画のことがあるので 1 フレーム待つ
+      const id = requestAnimationFrame(() => {
+        document.getElementById(hash.slice(1))?.scrollIntoView();
+      });
+      return () => cancelAnimationFrame(id);
     }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        rootMargin: "0px 0px -10% 0px",
-        threshold: 0.15,
-      },
-    );
-
-    targets.forEach((target) => observer.observe(target));
-
-    return () => observer.disconnect();
-  }, [location.pathname]);
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   return null;
 };
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <GoogleAnalytics />
-      <FadeInObserver />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Body />} />
-        <Route path="/home" element={<Body />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/mywork" element={<Mywork />} />
-        <Route path="/blog_list" element={<Blog_main />} />
-        <Route path="/blog_list/:id" element={<Blog_page />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-  );
-};
+const App = () => (
+  <BrowserRouter>
+    <GoogleAnalytics />
+    <ScrollManager />
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Navigate to="/" replace />} />
+      <Route path="/works/:slug" element={<WorkDetail />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+    <Footer />
+  </BrowserRouter>
+);
 
 export default App;
