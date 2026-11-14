@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import s from "./Header.module.css";
+import ui from "../styles/ui.module.css";
 
 const items = [
   { id: "profile", label: "PROFILE" },
@@ -31,22 +33,22 @@ const Header = () => {
       },
       { rootMargin: "-40% 0px -55% 0px" },
     );
-    sections.forEach((s) => observer.observe(s));
+    sections.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, [pathname]);
 
   return (
-    <header className="site-header">
-      <div className="shell header-in">
-        <Link to="/" className="brand">
+    <header className={s.header}>
+      <div className={`${ui.shell} ${s.inner}`}>
+        <Link to="/" className={s.brand}>
           MK's room
         </Link>
-        <nav className="nav" aria-label="メインナビゲーション">
+        <nav className={s.nav} aria-label="メインナビゲーション">
           {items.map((i) => (
             <Link
               key={i.id}
               to={{ pathname: "/", hash: `#${i.id}` }}
-              className={current === i.id ? "is-active" : undefined}
+              className={current === i.id ? s.active : undefined}
             >
               {i.label}
             </Link>

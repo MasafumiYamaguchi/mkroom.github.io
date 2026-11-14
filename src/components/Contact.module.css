@@ -1,0 +1,50 @@
+.contact {
+  --section-min: 35vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+  min-height: 120px;
+  padding: 0 var(--pad) 22px;
+  border-right: 1px solid var(--line);
+  transition: background 0.2s;
+}
+
+.cell:last-child {
+  border-right: 0;
+}
+
+a.cell:hover {
+  background: #0d0d0d;
+}
+
+.label {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .cell {
+    min-height: 84px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}

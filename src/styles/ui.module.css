@@ -1,0 +1,138 @@
+/* 複数コンポーネントで共有する部品 */
+
+.shell {
+  max-width: var(--frame);
+  margin: 0 auto;
+  border-inline: 1px solid var(--line);
+}
+
+.main {
+  min-height: calc(100vh - var(--header-h) - 60px);
+}
+
+/* トップの各項目はビューポート1画面分(固定ヘッダーを除く)。
+   --section-min で個別に上書きできる */
+.section {
+  min-height: var(--section-min, calc(100vh - var(--header-h)));
+  display: flex;
+  flex-direction: column;
+}
+
+/* .section の中で見出しバー以外の本体を余った高さまで広げる */
+.fill {
+  flex: 1;
+}
+
+.secHead {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 40px;
+  padding: 0 var(--pad);
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.count {
+  color: var(--dim);
+  font-weight: 400;
+}
+
+/* ドットグリッドのプレースホルダー */
+.ph {
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: var(--dim);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--line);
+  background-color: var(--panel-2);
+  background-image: radial-gradient(#1d1d1d 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+  padding: 0 18px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.btn:hover {
+  border-color: var(--text);
+  background: #151515;
+}
+
+.btn.primary {
+  background: var(--text);
+  color: #000;
+  border-color: var(--text);
+}
+
+.btn.primary:hover {
+  background: #d8d8d8;
+}
+
+.btn.wide {
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 12px;
+}
+
+/* ステータスバッジ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.badge::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: var(--tone, var(--green));
+}
+
+.badge.large {
+  font-size: 12px;
+}
+
+.green {
+  --tone: var(--green);
+}
+.blue {
+  --tone: var(--blue);
+}
+.yellow {
+  --tone: var(--yellow);
+}

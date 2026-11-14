@@ -1,11 +1,13 @@
 import SectionHead from "./SectionHead";
 import { profile } from "../data/site";
+import s from "./Profile.module.css";
+import ui from "../styles/ui.module.css";
 
 const Profile = () => (
-  <section id="profile">
+  <section id="profile" className={ui.section}>
     <SectionHead label="Profile" />
-    <div className="profile">
-      <dl className="profile-aside">
+    <div className={`${ui.fill} ${s.profile}`}>
+      <dl className={s.aside}>
         {profile.rows.map((r) => (
           <div key={r.label}>
             <dt>{r.label}</dt>
@@ -13,7 +15,7 @@ const Profile = () => (
           </div>
         ))}
       </dl>
-      <div className="profile-body">
+      <div className={s.body}>
         {profile.body.map((p) => (
           <p key={p}>{p}</p>
         ))}

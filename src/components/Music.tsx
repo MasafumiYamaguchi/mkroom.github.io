@@ -1,26 +1,28 @@
 import SectionHead from "./SectionHead";
 import { favorites, nowPlaying as np } from "../data/site";
+import s from "./Music.module.css";
+import ui from "../styles/ui.module.css";
 
 const Music = () => (
-  <section id="music">
+  <section id="music" className={ui.section}>
     <SectionHead label="Music" />
-    <div className="music">
-      <div className="now">
-        <div className="ph">[JACKET]</div>
-        <span className="now-label">再生中の音楽</span>
+    <div className={`${ui.fill} ${s.music}`}>
+      <div className={s.now}>
+        <div className={`${ui.ph} ${s.jacket}`}>[JACKET]</div>
+        <span className={s.label}>再生中の音楽</span>
         <h3>{np.title}</h3>
-        <p className="artist">
+        <p className={s.artist}>
           {np.artist} — {np.album}
         </p>
-        <div className="progress" aria-hidden="true">
+        <div className={s.progress} aria-hidden="true">
           <i style={{ width: `${np.progress * 100}%` }} />
         </div>
-        <div className="times">
+        <div className={s.times}>
           <span>{np.elapsed}</span>
           <span>{np.total}</span>
         </div>
         <a
-          className="link-u"
+          className={s.link}
           href={np.href}
           target="_blank"
           rel="noopener noreferrer"
@@ -28,19 +30,17 @@ const Music = () => (
           Open in Spotify ↗
         </a>
       </div>
-      <div className="favs">
-        <p className="favs-label">FAVORITES — {favorites.length} TRACKS</p>
+      <div className={s.favs}>
+        <p className={s.favsLabel}>FAVORITES — {favorites.length} TRACKS</p>
         <ol
-          className="fav-grid"
-          style={{ listStyle: "none", margin: 0, padding: 0 }}
-        >
+          className={s.favGrid}>
           {favorites.map((f, i) => (
-            <li key={i} className="fav">
-              <span className="no">{String(i + 1).padStart(2, "0")}</span>
-              <div className="ph" />
+            <li key={i} className={s.fav}>
+              <span className={s.no}>{String(i + 1).padStart(2, "0")}</span>
+              <div className={`${ui.ph} ${s.cover}`} />
               <div>
-                <strong>{f.title}</strong>
-                <span>{f.artist}</span>
+                <strong className={s.favTitle}>{f.title}</strong>
+                <span className={s.favArtist}>{f.artist}</span>
               </div>
             </li>
           ))}

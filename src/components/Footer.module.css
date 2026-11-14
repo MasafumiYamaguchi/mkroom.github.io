@@ -1,0 +1,26 @@
+.footer {
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+}
+
+.inner {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    height: 72px;
+  }
+}

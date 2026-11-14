@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import WorkStatus from "../components/WorkStatus";
 import { works } from "../data/works";
+import ui from "../styles/ui.module.css";
+import s from "./WorkDetail.module.css";
 
 const toWorks = { pathname: "/", hash: "#works" };
 
@@ -10,15 +12,15 @@ const WorkDetail = () => {
 
   if (!w) {
     return (
-      <main className="shell work-page">
-        <p className="crumbs">
+      <main className={`${ui.shell} ${ui.main} ${s.page}`}>
+        <p className={s.crumbs}>
           <Link to={toWorks}>Works</Link> / <b>Not found</b>
         </p>
-        <div className="work-hero">
+        <div className={s.hero}>
           <h1>Not found</h1>
-          <p className="lead">指定された Work は見つかりませんでした。</p>
+          <p className={s.lead}>指定された Work は見つかりませんでした。</p>
         </div>
-        <Link className="btn back" to={toWorks}>
+        <Link className={`${ui.btn} ${s.back}`} to={toWorks}>
           ← Works 一覧へ
         </Link>
       </main>
@@ -33,48 +35,50 @@ const WorkDetail = () => {
   ];
 
   return (
-    <main className="shell work-page">
-      <p className="crumbs">
+    <main className={`${ui.shell} ${ui.main} ${s.page}`}>
+      <p className={s.crumbs}>
         <Link to={toWorks}>Works</Link> / <b>{w.name}</b>
       </p>
 
-      <header className="work-hero">
-        <div className="tag-row">
-          <span className="tag">{w.category.split(" / ")[0]}</span>
-          <WorkStatus status={w.status} />
+      <header className={s.hero}>
+        <div className={s.tagRow}>
+          <span className={s.tag}>{w.category.split(" / ")[0]}</span>
+          <WorkStatus status={w.status} large />
         </div>
         <h1>{w.name}</h1>
-        <p className="lead">{w.lead}</p>
+        <p className={s.lead}>{w.lead}</p>
       </header>
 
-      <div className="work-body">
-        <div className="work-main">
-          <div className="ph">[スクリーンショット / デモ動画]</div>
-          {w.sections.map((s, i) => (
-            <section key={s.title} className="wsec">
+      <div className={s.body}>
+        <div className={s.main}>
+          <div className={`${ui.ph} ${s.media}`}>
+            [スクリーンショット / デモ動画]
+          </div>
+          {w.sections.map((sec, i) => (
+            <section key={sec.title} className={s.section}>
               <h2>
-                {String(i + 1).padStart(2, "0")} / {s.title}
+                {String(i + 1).padStart(2, "0")} / {sec.title}
               </h2>
-              {s.body && <p>{s.body}</p>}
-              {s.packages && (
-                <div className="pkgs">
-                  {s.packages.map((p) => (
-                    <div key={p.name} className="pkg">
-                      <b>{p.name}</b>
-                      <span>{p.desc}</span>
+              {sec.body && <p>{sec.body}</p>}
+              {sec.packages && (
+                <div className={s.pkgs}>
+                  {sec.packages.map((p) => (
+                    <div key={p.name} className={s.pkg}>
+                      <span className={s.pkgName}>{p.name}</span>
+                      <span className={s.pkgDesc}>{p.desc}</span>
                     </div>
                   ))}
                 </div>
               )}
             </section>
           ))}
-          <Link className="btn back" to={toWorks}>
+          <Link className={`${ui.btn} ${s.back}`} to={toWorks}>
             ← Works 一覧へ
           </Link>
         </div>
 
-        <aside className="props">
-          <div className="props-head">PROPERTIES</div>
+        <aside className={s.props}>
+          <div className={s.propsHead}>PROPERTIES</div>
           <dl>
             {props.map((p) => (
               <div key={p.label}>
@@ -84,11 +88,11 @@ const WorkDetail = () => {
             ))}
           </dl>
           {w.links.length > 0 && (
-            <div className="props-links">
+            <div className={s.links}>
               {w.links.map((l) => (
                 <a
                   key={l.label}
-                  className={`btn${l.href ? "" : " off"}`}
+                  className={`${ui.btn} ${s.link}${l.href ? "" : ` ${s.off}`}`}
                   href={l.href}
                   target="_blank"
                   rel="noopener noreferrer"

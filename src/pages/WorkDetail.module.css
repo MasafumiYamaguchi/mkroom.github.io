@@ -1,0 +1,206 @@
+.page {
+  padding: 0 var(--pad) 64px;
+}
+
+.crumbs {
+  padding: 22px 0 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.crumbs a:hover {
+  color: var(--text);
+}
+
+.crumbs b {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.hero {
+  padding: 48px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  padding: 2px 8px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.hero h1 {
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.lead {
+  max-width: 44em;
+  margin-top: 22px;
+  font-size: 16px;
+  line-height: 2.1;
+  color: #e6e6e6;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  padding-top: 40px;
+  align-items: start;
+}
+
+.main .media {
+  aspect-ratio: 2.4 / 1;
+  font-size: 12px;
+}
+
+.section {
+  margin-top: 32px;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.section p {
+  font-size: 15px;
+  line-height: 2;
+}
+
+.pkgs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 14px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+}
+
+.pkg {
+  padding: 16px 18px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.pkg:nth-child(3n) {
+  border-right: 0;
+}
+
+.pkg:last-child {
+  border-bottom: 0;
+}
+
+.pkgName {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pkgDesc {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.props {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  position: sticky;
+  top: calc(var(--header-h) + 16px);
+}
+
+.propsHead {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.props dl {
+  padding: 4px 18px 0;
+}
+
+.props dl > div {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.props dl > div:last-child {
+  border-bottom: 0;
+}
+
+.props dt {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+.links {
+  display: grid;
+  gap: 8px;
+  padding: 10px 18px 18px;
+}
+
+.links .link {
+  justify-content: space-between;
+  height: 44px;
+  font-weight: 600;
+}
+
+.links .off {
+  color: var(--dim);
+  pointer-events: none;
+}
+
+.back {
+  margin-top: 40px;
+}
+
+@media (max-width: 1000px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+  .props {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .pkgs {
+    grid-template-columns: 1fr;
+  }
+  .pkg {
+    border-right: 0;
+  }
+}
